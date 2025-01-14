@@ -1,0 +1,112 @@
+﻿@model DACS.Models.PhieuDangTuyen
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Employer/Views/Shared/_Layout.cshtml";
+}
+<!-- Start banner Area -->
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row search-page-top d-flex align-items-center justify-content-center">
+            <div class="banner-content col-lg-12">
+                <h1 class="text-white">
+                    Tìm Kiếm Việc Làm
+                </h1>
+                <!--Search box-->
+                @* @Html.Partial("../Shared/_SearchBoxPartial.cshtml")
+                <p style="font-size: 20px" class="text-white"> <span>Search by tags:</span> Developer, Engineer, Technology, Support, Manager, Senior, Junior</p> *@
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->
+<div class="container mt-5 pt-5">
+    <h1>Xóa thông tin phiếu đăng tuyển</h1>
+    <h3>Bạn có chắc chắn muốn xóa thông tin này không?</h3>
+    <div class="mb-5">
+        <h4>PhieuDangTuyen</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Tên ngành:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TenNganh)
+            </dd>
+            <dt class="col-sm-2">
+               Mức lương:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.MucLuong)
+            </dd>
+            <dt class="col-sm-2">
+                Năm kinh nghiệm:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NamKN)
+            </dd>
+            <dt class="col-sm-2">
+                Tỉnh:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Tinhs.TenTinh)
+            </dd>
+            <dt class="col-sm-2">
+                Tên việc làm:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TenViecLam)
+            </dd>
+            <dt class="col-sm-2">
+                Chức danh:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ChucDanh)
+            </dd>
+            @* <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.MoTa)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.MoTa)
+            </dd> *@
+            <dt class="col-sm-2">
+                Địa điểm
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DiaDiem)
+            </dd>
+            <dt class="col-sm-2">
+                Ngày lập phiếu:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NgayLapPhieu)
+            </dd>
+            <dt class="col-sm-2">
+                Hạn nộp:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.HanNopHoSo)
+            </dd>
+            @* <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NhaTuyenDungs)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NhaTuyenDungs.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Statuses)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Statuses.Id)
+            </dd> *@
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a class="btn btn-secondary" asp-action="IndexCaNhan" asp-route-id="@Model.NhaTuyenDungs.UserId">Trở về</a>
+        </form>
+    </div>
+
+</div>

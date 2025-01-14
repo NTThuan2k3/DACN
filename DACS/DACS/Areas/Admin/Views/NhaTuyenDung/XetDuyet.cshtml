@@ -1,0 +1,85 @@
+﻿@model IEnumerable<DACS.Models.NhaTuyenDung>
+
+@{
+    ViewData["Title"] = "XetDuyet";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@* <p>
+    <a asp-action="Create">Create New</a>
+</p> *@
+<div class="container mb-5">
+    <h1>Xét Duyệt</h1>
+    <table class="table container">
+        <thead>
+            <tr>
+                <th>
+                    Tên nhà tuyển dụng
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SDT)
+                </th>
+                <th>
+                    Địa điểm
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    Ảnh đại diện
+                </th>
+                <th>
+                    Tỉnh
+                </th>
+                <th>
+                    Mô tả
+                </th>
+                <th>
+                    Trạng thái
+                </th>
+                <th>
+                    Xét duyệt
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenNTD)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SDT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DiaDiem)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        <img src="@Html.DisplayFor(modelItem => item.ImageDaiDien)" alt="Alternate Text" style="max-width: 100px; max-height: 100px;" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tinhs.TenTinh)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MoTa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.XetDuyet)
+                    </td>
+                    <td>
+                        <form asp-action="XetDuyet" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="id" value="@item.Id" />
+                            <button type="submit" name="decision" value="YES" class="btn btn-success">YES</button>
+                            <button type="submit" name="decision" value="NO" class="btn btn-danger">NO</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

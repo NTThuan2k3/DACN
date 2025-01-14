@@ -1,0 +1,140 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\THUAN\\OneDrive\\Documents\\\u0110ACN\\DACN\\DACS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|c:\\users\\thuan\\onedrive\\documents\\\u0111acn\\dacn\\dacs\\dacs\\areas\\employer\\views\\nhatuyendung\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|solutionrelative:dacs\\areas\\employer\\views\\nhatuyendung\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|c:\\users\\thuan\\onedrive\\documents\\\u0111acn\\dacn\\dacs\\dacs\\areas\\employer\\controllers\\nhatuyendungcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|solutionrelative:dacs\\areas\\employer\\controllers\\nhatuyendungcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|c:\\users\\thuan\\onedrive\\documents\\\u0111acn\\dacn\\dacs\\dacs\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|solutionrelative:dacs\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|c:\\users\\thuan\\onedrive\\documents\\\u0111acn\\dacn\\dacs\\dacs\\views\\donungtuyen\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|solutionrelative:dacs\\views\\donungtuyen\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|c:\\users\\thuan\\onedrive\\documents\\\u0111acn\\dacn\\dacs\\dacs\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|solutionrelative:dacs\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|c:\\users\\thuan\\onedrive\\documents\\\u0111acn\\dacn\\dacs\\dacs\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|solutionrelative:dacs\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|c:\\users\\thuan\\onedrive\\documents\\\u0111acn\\dacn\\dacs\\dacs\\views\\donungtuyen\\detailsphieu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|solutionrelative:dacs\\views\\donungtuyen\\detailsphieu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 252,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\THUAN\\OneDrive\\Documents\\\u0110ACN\\DACN\\DACS\\DACS\\Areas\\Employer\\Views\\NhaTuyenDung\\Edit.cshtml",
+              "RelativeDocumentMoniker": "DACS\\Areas\\Employer\\Views\\NhaTuyenDung\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\THUAN\\OneDrive\\Documents\\\u0110ACN\\DACN\\DACS\\DACS\\Areas\\Employer\\Views\\NhaTuyenDung\\Edit.cshtml",
+              "RelativeToolTip": "DACS\\Areas\\Employer\\Views\\NhaTuyenDung\\Edit.cshtml",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAACUAAABUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-06T14:59:32.592Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NhaTuyenDungController.cs",
+              "DocumentMoniker": "C:\\Users\\THUAN\\OneDrive\\Documents\\\u0110ACN\\DACN\\DACS\\DACS\\Areas\\Employer\\Controllers\\NhaTuyenDungController.cs",
+              "RelativeDocumentMoniker": "DACS\\Areas\\Employer\\Controllers\\NhaTuyenDungController.cs",
+              "ToolTip": "C:\\Users\\THUAN\\OneDrive\\Documents\\\u0110ACN\\DACN\\DACS\\DACS\\Areas\\Employer\\Controllers\\NhaTuyenDungController.cs",
+              "RelativeToolTip": "DACS\\Areas\\Employer\\Controllers\\NhaTuyenDungController.cs",
+              "ViewState": "AQIAAGUAAAAAAAAAAAAswHkAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T14:53:39.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Register.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\THUAN\\OneDrive\\Documents\\\u0110ACN\\DACN\\DACS\\DACS\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeDocumentMoniker": "DACS\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ToolTip": "C:\\Users\\THUAN\\OneDrive\\Documents\\\u0110ACN\\DACN\\DACS\\DACS\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeToolTip": "DACS\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAALsAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T13:57:55.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EmailSender.cs",
+              "DocumentMoniker": "C:\\Users\\THUAN\\OneDrive\\Documents\\\u0110ACN\\DACN\\DACS\\DACS\\Services\\EmailSender.cs",
+              "RelativeDocumentMoniker": "DACS\\Services\\EmailSender.cs",
+              "ToolTip": "C:\\Users\\THUAN\\OneDrive\\Documents\\\u0110ACN\\DACN\\DACS\\DACS\\Services\\EmailSender.cs",
+              "RelativeToolTip": "DACS\\Services\\EmailSender.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T13:57:26.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\THUAN\\OneDrive\\Documents\\\u0110ACN\\DACN\\DACS\\DACS\\appsettings.json",
+              "RelativeDocumentMoniker": "DACS\\appsettings.json",
+              "ToolTip": "C:\\Users\\THUAN\\OneDrive\\Documents\\\u0110ACN\\DACN\\DACS\\DACS\\appsettings.json",
+              "RelativeToolTip": "DACS\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-16T13:56:33.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\THUAN\\OneDrive\\Documents\\\u0110ACN\\DACN\\DACS\\DACS\\Views\\DonUngTuyen\\Index.cshtml",
+              "RelativeDocumentMoniker": "DACS\\Views\\DonUngTuyen\\Index.cshtml",
+              "ToolTip": "C:\\Users\\THUAN\\OneDrive\\Documents\\\u0110ACN\\DACN\\DACS\\DACS\\Views\\DonUngTuyen\\Index.cshtml",
+              "RelativeToolTip": "DACS\\Views\\DonUngTuyen\\Index.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAEcAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-09T11:44:40.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DetailsPhieu.cshtml",
+              "DocumentMoniker": "C:\\Users\\THUAN\\OneDrive\\Documents\\\u0110ACN\\DACN\\DACS\\DACS\\Views\\DonUngTuyen\\DetailsPhieu.cshtml",
+              "RelativeDocumentMoniker": "DACS\\Views\\DonUngTuyen\\DetailsPhieu.cshtml",
+              "ToolTip": "C:\\Users\\THUAN\\OneDrive\\Documents\\\u0110ACN\\DACN\\DACS\\DACS\\Views\\DonUngTuyen\\DetailsPhieu.cshtml",
+              "RelativeToolTip": "DACS\\Views\\DonUngTuyen\\DetailsPhieu.cshtml",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-09T11:44:30.213Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

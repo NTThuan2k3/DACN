@@ -1,0 +1,72 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using DACS.Models
+
+@inject UserManager<User> UserManager
+@{
+    var account = await UserManager.GetUserAsync(User);
+}
+
+@model DACS.Models.DonUngTuyen
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Start banner Area -->
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row search-page-top d-flex align-items-center justify-content-center">
+            <div class="banner-content col-lg-12">
+                <h1 class="text-white">
+                    Tìm Kiếm Việc Làm
+                </h1>
+                <!--Search box-->
+                @* @Html.Partial("../Shared/_SearchBoxPartial.cshtml")
+                <p style="font-size: 20px" class="text-white"> <span>Search by tags:</span> Developer, Engineer, Technology, Support, Manager, Senior, Junior</p> *@
+            </div>
+        </div>
+    </div>
+</section>
+
+<h1>Nộp đơn</h1>
+
+<h4>Đơn Ứng Tuyển</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Email:</label>
+                <input type="text" class="form-control" value="@UserManager.GetUserName(User)" disabled />
+            </div>
+            <p>Tên người dùng: @ViewBag.Username</p>
+            @* <div class="form-group">
+            <label asp-for="FileCV" class="control-label">File CV:</label>
+            <input type="file" asp-for="FileCV" class="form-control" />
+            <span asp-validation-for="FileCV" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label for="selectedCV">Chọn CV từ danh sách:</label>
+                <select class="form-control" id="selectedCV" name="selectedCV" asp-items="ViewBag.CV">
+                    <option value="">--Chọn CV--</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Trở về</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,216 @@
+﻿@model DACS.Models.PhieuDangTuyen
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Employer/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Start banner Area -->
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row search-page-top d-flex align-items-center justify-content-center">
+            <div class="banner-content col-lg-12">
+                <h1 class="text-white">
+                    Tìm Kiếm Việc Làm
+                </h1>
+                <!--Search box-->
+                @* @Html.Partial("../Shared/_SearchBoxPartial.cshtml")
+                <p style="font-size: 20px" class="text-white"> <span>Search by tags:</span> Developer, Engineer, Technology, Support, Manager, Senior, Junior</p> *@
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->
+@* <h1 >Phiếu Đăng Tuyển</h1>
+
+<div class=" justify-content-center d-flex">
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NhaTuyenDungs)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NhaTuyenDungs.TenNTD)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TenNganh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TenNganh)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NamKN)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NamKN)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tinhs)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tinhs.TenTinh)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TenViecLam)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TenViecLam)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ChucDanh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ChucDanh)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MucLuong)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MucLuong)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DiaDiem)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DiaDiem)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NgayLapPhieu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NgayLapPhieu)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HanNopHoSo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HanNopHoSo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Statuses)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Statuses.StatusName)
+        </dd>
+    </dl>
+</div> *@
+<div>
+    <!-- Modal Popup -->
+    <div class="modal fade" id="applyModal" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="applyModalLabel">Ứng Tuyển</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Form để tải lên file CV và ứng tuyển -->
+                    <form id="applyForm" method="post" action="@Url.Action("Create", "DonUngTuyen", new { id = Model?.Id })" enctype="multipart/form-data">
+                        <!-- Thêm các trường và nút submit vào form -->
+                        <div class="form-group">
+                            <label for="fullName">Họ và Tên:</label>
+                            <label id="fullNameLabel" class="form-control">@ViewBag.FullName</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Số Điện Thoại:</label>
+                            <label id="phoneNumberLabel" class="form-control">@ViewBag.PhoneNumber</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <label id="emailLabel" class="form-control">@ViewBag.Email</label>
+                        </div>
+                        @* <div class="form-group">
+                        <label for="cvFile">Chọn File CV:</label>
+                        <input type="file" class="form-control" id="cvFile" name="fileCV">
+                        </div> *@
+                        <div class="form-group mb-3">
+                            <label for="selectedCV">Hoặc Chọn CV từ danh sách:</label>
+                            <select class="form-control" id="selectedCV" name="selectedCV" asp-items="ViewBag.CV">
+                                <option value="">--Chọn CV--</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Ứng Tuyển</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    @* <a id="applyButton" class="btn btn-primary" href="#">Ứng tuyển</a> |
+    <a class="btn btn-close" asp-action="Index">Quay lại danh sách</a> *@
+</div>
+
+
+<!-- Start post Area -->
+<section class="post-area section-gap">
+    <div class="container">
+        <div class="row justify-content-center d-flex">
+            <div class="col-lg-8 post-list">
+                <div class="single-post d-flex flex-row">
+                    <div class="thumb">
+                        <img src="@Html.DisplayFor(model => model.NhaTuyenDungs.ImageDaiDien)" width="200px" height="120px" alt="Alternate Text" />
+                        <ul class="tags">
+                            <li>
+                                @Html.DisplayFor(model => model.TenNganh)
+                            </li>
+                            <li>
+                                @Html.DisplayFor(model => model.Tinhs.TenTinh)
+                            </li>
+                            <li>
+                                @Html.DisplayFor(model => model.MucLuong)
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="details">
+                        <div class="title d-flex flex-row justify-content-between">
+                            <div class="titles">
+                                <a href="#"><h4>@Html.DisplayFor(model => model.TenViecLam)</h4></a>
+                                <h6>@Html.DisplayFor(model => model.NhaTuyenDungs.TenNTD)</h6>
+                            </div>
+                            <ul class="btns">
+                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                                <li><a id="applyButton2" class=""  href="#">Ứng tuyển</a></li>
+                            </ul>
+                        </div>
+
+                        <p class="address"><span class="lnr lnr-map"> </span>@Html.DisplayFor(model => model.DiaDiem)</p>
+                        <p class="address"><span class="lnr lnr-database"> </span>@Html.DisplayFor(model => model.MucLuong)</p>
+                    </div>
+                </div>
+                <div class="single-post job-details">
+                    <h4 class="single-title">Mô tả công việc</h4>
+                    <p>
+                        @Html.DisplayFor(model => model.MoTa)
+                    </p>
+                </div>
+            </div>
+            @* sidebar *@
+            @* @Html.Partial("../Shared/_SidebarPartial.cshtml") *@
+        </div>
+    </div>
+</section>
+<!-- End post Area -->
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#applyButton").click(function () {
+                $("#applyModal").modal('show');
+            });
+        });
+        $(document).ready(function () {
+            $("#applyButton2").click(function () {
+                $("#applyModal").modal('show');
+            });
+        });
+    </script>
+}

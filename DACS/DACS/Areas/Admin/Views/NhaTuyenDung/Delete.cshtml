@@ -1,0 +1,97 @@
+﻿@model DACS.Models.NhaTuyenDung
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <h1>Xóa</h1>
+
+    <h3>Bạn có chắc chắn muốn xóa thông tin này không?</h3>
+    <div>
+        <h4>Thông tin nhà tuyển dụng</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.TenNTD)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TenNTD)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SDT)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SDT)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Tinhs)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Tinhs.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DiaDiem)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DiaDiem)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ImageDaiDien)
+            </dt>
+            <dd class="col-sm-10">
+                <img src="@Html.DisplayFor(model => model.ImageDaiDien)" alt="Alternate Text" style="max-width: 100px; max-height: 100px;" />
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.HinhAnhCty)
+            </dt>
+            <dd class="col-sm-10">
+                <img src="@Html.DisplayFor(model => model.HinhAnhCty)" alt="Alternate Text" style="max-width: 100px; max-height: 100px;" />
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Website)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Website)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.QuyMo)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.QuyMo)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.MoTa)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.MoTa)
+            </dd>
+            @* <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Users)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Users.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Statuses)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Statuses.Id) *@
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Xóa" class="btn btn-danger" /> |
+            <a class="btn btn-secondary" asp-action="Index">Quay lại</a>
+        </form>
+    </div>
+</div>
+

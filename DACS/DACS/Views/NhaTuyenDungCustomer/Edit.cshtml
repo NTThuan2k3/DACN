@@ -1,0 +1,203 @@
+﻿@model DACS.Models.NhaTuyenDung
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Start banner Area -->
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row search-page-top d-flex align-items-center justify-content-center">
+            <div class="banner-content col-lg-12">
+                <h1 class="text-white">
+                    Tìm Kiếm Việc Làm
+                </h1>
+                <!--Search box-->
+                @* @Html.Partial("../Shared/_SearchBoxPartial.cshtml")
+                <p style="font-size: 20px" class="text-white"> <span>Search by tags:</span> Developer, Engineer, Technology, Support, Manager, Senior, Junior</p> *@
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <h1 class="pt-30">Chỉnh sửa thông tin của nhà tuyển dụng</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="TenNTD" class="control-label">Tên nhà tuyển dụng</label>
+                    <input asp-for="TenNTD" class="form-control" />
+                    <span asp-validation-for="TenNTD" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SDT" class="control-label">Số điện thoạt</label>
+                    <input asp-for="SDT" class="form-control" />
+                    <span asp-validation-for="SDT" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TinhId" class="control-label">Tỉnh, thành</label>
+                    <select asp-for="TinhId" class="form-control" asp-items="ViewBag.Tinh"></select>
+                    <span asp-validation-for="TinhId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DiaDiem" class="control-label">Đỉa chỉ</label>
+                    <input asp-for="DiaDiem" class="form-control" />
+                    <span asp-validation-for="DiaDiem" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImageDaiDien">Ảnh đại diện</label>
+                    <input type="file" asp-for="ImageDaiDien" name="image1" class="form-control" id="imageInput1" />
+                </div>
+                <div class="col-8 mb-1">
+                    <img src="@Model.ImageDaiDien" alt="Image Dai Dien" style="max-width:200px;" id="previewImageDaiDien" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImageBangTin">Ảnh bảng tin</label>
+                    <input type="file" asp-for="ImageBangTin" name="image2" class="form-control" id="imageInput2" />
+                </div>
+                <div class="col-8 mb-1">
+                    <img src="@Model.ImageBangTin" alt="Image Bang Tin" style="max-width:200px;" id="previewImageBangTin" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Website" class="control-label"></label>
+                    <input asp-for="Website" class="form-control" />
+                    <span asp-validation-for="Website" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="QuyMo" class="control-label">Quy mô</label>
+                    <input asp-for="QuyMo" class="form-control" />
+                    <span asp-validation-for="QuyMo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MoTa" class="control-label">Thông tin về nhà tuyển dụng</label>
+                    @* <input asp-for="MoTa" class="form-control" /> *@
+                    <textarea asp-for="MoTa" class="single-textarea form-control" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'MoTa'" required></textarea>
+                    <span asp-validation-for="MoTa" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Cập nhật" class="btn btn-primary" />
+                </div>
+            </form>
+
+            <script>
+                document.querySelectorAll('input[type="file"]').forEach(input => {
+                    input.addEventListener('change', function (event) {
+                        const file = event.target.files[0];
+                        if (file) {
+                            const reader = new FileReader();
+                            reader.onload = function (e) {
+                                const imgId = event.target.id === "imageInput1" ? "previewImageDaiDien" : "previewImageBangTin";
+                                const img = document.getElementById(imgId);
+                                img.src = e.target.result;
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    });
+                });
+            </script>
+        </div>
+    </div>
+
+</div>
+<@* div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="TenNTD" class="control-label"></label>
+                <input asp-for="TenNTD" class="form-control" />
+                <span asp-validation-for="TenNTD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SDT" class="control-label"></label>
+                <input asp-for="SDT" class="form-control" />
+                <span asp-validation-for="SDT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TinhId" class="control-label"></label>
+                <select asp-for="TinhId" class="form-control" asp-items="ViewBag.Tinh"></select>
+                <span asp-validation-for="TinhId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiaDiem" class="control-label"></label>
+                <input asp-for="DiaDiem" class="form-control" />
+                <span asp-validation-for="DiaDiem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageDaiDien">ImageDaiDien</label>
+                <input type="file" asp-for="ImageDaiDien" name="image1" class="form-control" id="imageInput1" />
+            </div>
+            <div class="col-8">
+                <img src="@Model.ImageDaiDien" alt="Image Dai Dien" style="max-width:200px;" id="previewImageDaiDien" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageBangTin">ImageBangTin</label>
+                <input type="file" asp-for="ImageBangTin" name="image2" class="form-control" id="imageInput2" />
+            </div>
+            <div class="col-8">
+                <img src="@Model.ImageBangTin" alt="Image Bang Tin" style="max-width:200px;" id="previewImageBangTin" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Website" class="control-label"></label>
+                <input asp-for="Website" class="form-control" />
+                <span asp-validation-for="Website" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuyMo" class="control-label"></label>
+                <input asp-for="QuyMo" class="form-control" />
+                <span asp-validation-for="QuyMo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MoTa" class="control-label"></label>
+                <input asp-for="MoTa" class="form-control" />
+                <span asp-validation-for="MoTa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+
+        <script>
+            document.querySelectorAll('input[type="file"]').forEach(input => {
+                input.addEventListener('change', function (event) {
+                    const file = event.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                            const imgId = event.target.id === "imageInput1" ? "previewImageDaiDien" : "previewImageBangTin";
+                            const img = document.getElementById(imgId);
+                            img.src = e.target.result;
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            });
+        </script>
+    </div>
+</div> *@
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

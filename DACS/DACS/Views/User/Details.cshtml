@@ -1,0 +1,82 @@
+﻿@model DACS.Models.User
+@{
+    ViewData["Title"] = "Chi tiết người dùng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Start banner Area -->
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row search-page-top d-flex align-items-center justify-content-center">
+            <div class="banner-content col-lg-12">
+                <h1 class="text-white">
+                    Tìm Kiếm Việc Làm
+                </h1>
+                <!--Search box-->
+                @* @Html.Partial("../Shared/_SearchBoxPartial.cshtml")
+                <p style="font-size: 20px" class="text-white"> <span>Search by tags:</span> Developer, Engineer, Technology, Support, Manager, Senior, Junior</p> *@
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="card">
+        <h2 class="card-header">Thông tin người dùng</h2>
+        <div class="card-body">
+            <div class="row">
+                <!-- Profile Picture -->
+                <div class="col-md-4 text-center">
+                    @if (!string.IsNullOrEmpty(Model.Image))
+                    {
+                        <img src="@Model.Image" alt="Ảnh người dùng" class="img-thumbnail" style="max-width: 150px; max-height: 150px;" />
+                    }
+                    else
+                    {
+                        <img src="~/images/default.jpg" alt="Ảnh mặc định" class="img-thumbnail" style="max-width: 150px; max-height: 150px;" />
+                    }
+                </div>
+
+                <!-- User Details -->
+                <div class="col-md-8">
+                    <div class="mb-3">
+                        <h5>Họ và tên:</h5>
+                        <p>@Model.FullName</p>
+                    </div>
+                    <div class="mb-3">
+                        <h5>Số điện thoại:</h5>
+                        <p>@Model.PhoneNumber</p>
+                    </div>
+                    <div class="mb-3">
+                        <h5>Căn cước công dân:</h5>
+                        <p>@Model.CCCD</p>
+                    </div>
+                    <div class="mb-3">
+                        <h5>Trạng thái:</h5>
+                        @if (Model.StatusId == 1)
+                        {
+                            <p class="text-success">Hoạt động</p>
+                        }
+                        else
+                        {
+                            <p class="text-danger">Tài khoản của bạn đã bị vô hiệu hóa. Vui lòng liên hệ với quản trị viên để biết thêm thông tin.</p>
+                            <br />
+                            <div class="text-end">
+                                <a href="mailto:admin@gmail.com" class="btn btn-warning">Liên hệ quản trị viên</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if (Model.StatusId == 1)
+        {
+            <div class="card-footer text-end">
+                <a asp-controller="User" asp-action="Edit" class="btn btn-primary">Chỉnh sửa</a>
+                <a asp-area="Identity" asp-page="/Account/Manage/ChangePassword" class="btn btn-primary">Đổi mật khẩu</a>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,104 @@
+﻿@model IEnumerable<DACS.Models.NhaTuyenDung>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@* <p>
+    <a asp-action="Create">Create New</a>
+</p> *@
+<div class="container mb-5">
+	<h1>Quản lý nhà tuyển dụng</h1>
+    <table class="table container">
+        <thead>
+            <tr>
+                <th>
+                    Tên nhà tuyển dụng
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SDT)
+                </th>
+                @* <th>
+                    @Html.DisplayNameFor(model => model.Tinhs)
+                </th> *@
+                <th>
+                    Địa điểm
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    Ảnh đại diện
+                </th>
+                <th>
+                    Ảnh công ty
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Website)
+                </th>
+                <th>
+                    Quy mô
+                </th>
+                @* <th>
+                @Html.DisplayNameFor(model => model.MoTa)
+                </th> 
+                <th>
+                    @Html.DisplayNameFor(model => model.Users)
+                </th>*@
+                <th>
+                    Trạng thái
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenNTD)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SDT)
+                    </td>
+                    @* <td>
+                        @Html.DisplayFor(modelItem => item.Tinhs.Id)
+                    </td> *@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DiaDiem)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        <img src="@Html.DisplayFor(modelItem => item.ImageDaiDien)" alt="Alternate Text" style="max-width: 100px; max-height: 100px;" />
+                    </td>
+                    <td>
+                        <img src="@Html.DisplayFor(modelItem => item.HinhAnhCty)" alt="Alternate Text" style="max-width: 100px; max-height: 100px;" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Website)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.QuyMo)
+                    </td>
+                    @* <td>
+                        @Html.DisplayFor(modelItem => item.MoTa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Users.Id)
+                    </td> *@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Statuses.StatusName)
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Chỉnh sửa</a> |
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

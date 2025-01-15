@@ -1,0 +1,53 @@
+﻿@model DACS.Models.CV
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Start banner Area -->
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row search-page-top d-flex align-items-center justify-content-center">
+            <div class="banner-content col-lg-12">
+                <h1 class="text-white">
+                    Tìm Kiếm Việc Làm
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->
+<div class="container pt-3">
+    <h1>Tạo CV</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create" method="post" enctype="multipart/form-data" onsubmit="return confirmRecommendation()">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="FileCV" class="control-label">Tải tệp lên (file.pdf)</label>
+                    <input type="file" asp-for="FileCV" class="form-control" />
+                    <span asp-validation-for="FileCV" class="text-danger"></span>
+                </div>
+                <input type="hidden" name="userChoice" id="userChoice" />
+                <div class="form-group">
+                    <input type="submit" value="Thêm mới" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function confirmRecommendation() {
+        const userChoice = confirm("Bạn có muốn chúng tôi đề xuất công việc phù hợp cho CV của bạn không?");
+        document.getElementById('userChoice').value = userChoice ? "Yes" : "No";
+        return true; // Tiếp tục submit form
+    }
+</script>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

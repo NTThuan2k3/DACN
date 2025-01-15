@@ -1,0 +1,84 @@
+﻿@model IEnumerable<DACS.Models.DonUngTuyen>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Start banner Area -->
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row search-page-top d-flex align-items-center justify-content-center">
+            <div class="banner-content col-lg-12">
+                <h1 class="text-white">
+                    Tìm Kiếm Việc Làm
+                </h1>
+                <!--Search box-->
+                @* @Html.Partial("../Shared/_SearchBoxPartial.cshtml")
+                <p style="font-size: 20px" class="text-white"> <span>Search by tags:</span> Developer, Engineer, Technology, Support, Manager, Senior, Junior</p> *@
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container pt-100">
+    <h1>ĐƠN ỨNG TUYỂN</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Họ Tên
+                </th>
+                <th>
+                    CV
+                </th>
+                <th>
+                    Tên công việc
+                </th>
+                <th>
+                    Trạng thái
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Users.FullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenCV)
+                        <br>
+                        @if (!string.IsNullOrEmpty(item.FileCV))
+                        {
+                            <a asp-action="ViewCV" asp-route-id="@item.Id" class="btn btn-success" target="_blank">Xem CV</a>
+                        }
+                        else
+                        {
+                            <span class="text-danger">Chưa có CV</span>
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhieuDangTuyens.TenViecLam)
+                    </td>
+                    <td>
+                        @if (item.XetDuyet == "Waiting")
+                        {
+                            <p>Chờ xét duyệt</p>
+                        }
+                        @if (item.XetDuyet == "Yes")
+                        {
+                            <p>Đã trúng tuyển</p>
+                        }
+                        @if (item.XetDuyet == "No")
+                        {
+                            <p>Đã trượt</p>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

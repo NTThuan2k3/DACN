@@ -1,0 +1,155 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|c:\\users\\thuan\\documents\\file hsd\\dacn\\dacs\\dacs\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|solutionrelative:dacs\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|c:\\users\\thuan\\documents\\file hsd\\dacn\\dacs\\dacs\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|solutionrelative:dacs\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|c:\\users\\thuan\\documents\\file hsd\\dacn\\dacs\\dacs\\areas\\employer\\controllers\\donungtuyencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|solutionrelative:dacs\\areas\\employer\\controllers\\donungtuyencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|c:\\users\\thuan\\documents\\file hsd\\dacn\\dacs\\dacs\\controllers\\cvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|solutionrelative:dacs\\controllers\\cvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|c:\\users\\thuan\\documents\\file hsd\\dacn\\dacs\\dacs\\views\\cv\\jobrecommendations.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|solutionrelative:dacs\\views\\cv\\jobrecommendations.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|c:\\users\\thuan\\documents\\file hsd\\dacn\\dacs\\dacs\\views\\cv\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|solutionrelative:dacs\\views\\cv\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|c:\\users\\thuan\\documents\\file hsd\\dacn\\dacs\\dacs\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|solutionrelative:dacs\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|c:\\users\\thuan\\documents\\file hsd\\dacn\\dacs\\dacs\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3B2B77C-F764-4D36-B256-8C8DB7617BA3}|DACS\\DACS.csproj|solutionrelative:dacs\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 252,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmailSender.cs",
+              "DocumentMoniker": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\Services\\EmailSender.cs",
+              "RelativeDocumentMoniker": "DACS\\Services\\EmailSender.cs",
+              "ToolTip": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\Services\\EmailSender.cs",
+              "RelativeToolTip": "DACS\\Services\\EmailSender.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T16:27:38.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\Views\\CV\\Create.cshtml",
+              "RelativeDocumentMoniker": "DACS\\Views\\CV\\Create.cshtml",
+              "ToolTip": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\Views\\CV\\Create.cshtml",
+              "RelativeToolTip": "DACS\\Views\\CV\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-20T15:05:29.536Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "JobRecommendations.cshtml",
+              "DocumentMoniker": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\Views\\CV\\JobRecommendations.cshtml",
+              "RelativeDocumentMoniker": "DACS\\Views\\CV\\JobRecommendations.cshtml",
+              "ToolTip": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\Views\\CV\\JobRecommendations.cshtml",
+              "RelativeToolTip": "DACS\\Views\\CV\\JobRecommendations.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-19T16:33:26.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CVController.cs",
+              "DocumentMoniker": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\Controllers\\CVController.cs",
+              "RelativeDocumentMoniker": "DACS\\Controllers\\CVController.cs",
+              "ToolTip": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\Controllers\\CVController.cs",
+              "RelativeToolTip": "DACS\\Controllers\\CVController.cs",
+              "ViewState": "AQIAADwAAAAAAAAAAAAkwOwAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T15:03:53.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "DACS\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "DACS\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-13T11:59:56.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DonUngTuyenController.cs",
+              "DocumentMoniker": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\Areas\\Employer\\Controllers\\DonUngTuyenController.cs",
+              "RelativeDocumentMoniker": "DACS\\Areas\\Employer\\Controllers\\DonUngTuyenController.cs",
+              "ToolTip": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\Areas\\Employer\\Controllers\\DonUngTuyenController.cs",
+              "RelativeToolTip": "DACS\\Areas\\Employer\\Controllers\\DonUngTuyenController.cs",
+              "ViewState": "AQIAAIgAAAAAAAAAAADwv9cAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T06:21:25.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\appsettings.json",
+              "RelativeDocumentMoniker": "DACS\\appsettings.json",
+              "ToolTip": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\appsettings.json",
+              "RelativeToolTip": "DACS\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-12T16:36:18.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\Models\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "DACS\\Models\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\Models\\ApplicationDbContext.cs",
+              "RelativeToolTip": "DACS\\Models\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAIwAAAAAAAAAAAAYwFcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T16:12:05.486Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

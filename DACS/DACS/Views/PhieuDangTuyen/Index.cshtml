@@ -1,0 +1,163 @@
+﻿@model IEnumerable<DACS.Models.PhieuDangTuyen>
+
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="banner-area relative" id="home">
+	<div class="overlay overlay-bg"></div>
+	<div class="container">
+		<div class="row search-page-top d-flex align-items-center justify-content-center">
+			<div class="banner-content col-lg-12">
+				<h1 class="text-white">
+					Tìm Kiếm Việc Làm
+				</h1>
+				<!--Search box-->
+				@* @Html.Partial("../Shared/_SearchBoxPartial.cshtml")
+				<p style="font-size: 20px" class="text-white"> <span>Search by tags:</span> Developer, Engineer, Technology, Support, Manager, Senior, Junior</p> *@
+				<form class="serach-form-area" asp-controller="PhieuDangTuyen" asp-action="Index">
+					<div class="row justify-content-center form-wrap">
+						<div class="col-lg-3 form-cols">
+							<div class="default-select" id="default-selects">
+								<select name="Tinh">
+									<option value="">Tỉnh</option>
+									@if (ViewBag.FilterTinhs != null)
+									{
+										foreach (var province in ViewBag.FilterTinhs)
+										{
+											<option value="@province.TenTinh" selected="@(ViewBag.SelectedTenTinh != null && ViewBag.SelectedTenTinh == province.TenTinh)">@province.TenTinh</option>
+										}
+									}
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-3 form-cols">
+							<div class="default-select" id="default-selects2">
+								<select name="Nganh">
+									<option value="">Tên ngành</option>
+									@if (ViewBag.FilterNganhs != null)
+									{
+										@foreach (var nganh in ViewBag.FilterNganhs)
+										{
+											<option value="@nganh.TenNganh" selected="@(ViewBag.SelectedTenNganh == nganh.TenNganh)">@nganh.TenNganh</option>
+										}
+									}
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-3 form-cols">
+							<div class="default-select" id="default-selects3">
+								<select name="NamKN">
+									<option value="">Năm kinh nghiệm</option>
+									@if (ViewBag.FilterNamKNs != null)
+									{
+										foreach (var namKN in ViewBag.FilterNamKNs)
+										{
+											<option value="@namKN.NamKN" selected="@(ViewBag.SelectedNamKN == namKN.NamKN)">@namKN.NamKN</option>
+										}
+									}
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-3 form-cols">
+							<div class="default-select" id="default-selects4">
+								<select name="Luong">
+									<option value="">Mức lương</option>
+									@if (ViewBag.FilterLuongs != null)
+									{
+										foreach (var luong in ViewBag.FilterLuongs)
+										{
+											<option value="@luong.MucLuong" selected="@(ViewBag.SelectedLuong == luong.MucLuong)">@luong.MucLuong</option>
+										}
+									}
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-3 form-cols" style="padding-top: 15px">
+							<div class="default-select" id="default-selects5">
+								<select name="TenVL">
+									<option value="">Tên công việc</option>
+									@if (ViewBag.FilterTenViecLams != null)
+									{
+										foreach (var tenVL in ViewBag.FilterTenViecLams)
+										{
+											<option value="@tenVL.TenViecLam" selected="@(ViewBag.SelectedTenVL == tenVL.TenViecLam)">@tenVL.TenViecLam</option>
+										}
+									}
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-3 form-cols" style="padding-top: 15px">
+							<div class="default-select" id="default-selects6">
+								<select name="ChucDanh">
+									<option value="">Chức vụ</option>
+									@if (ViewBag.FilterChucDanhs != null)
+									{
+										foreach (var chucDanh in ViewBag.FilterChucDanhs)
+										{
+											<option value="@chucDanh.ChucDanh" selected="@(ViewBag.SelectedChucDanh == chucDanh.ChucDanh)">@chucDanh.ChucDanh</option>
+										}
+									}
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-2 form-cols" style="padding-top: 15px">
+							<button type="submit" class="btn btn-info">
+								<span class="lnr lnr-magnifier"></span> Tìm kiếm
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="post-area section-gap">
+	<div class="container">
+		<div class="row justify-content-center d-flex">
+			<div class="col-lg-8 post-list">
+				@foreach (var test in Model)
+				{
+					<div class="single-post d-flex flex-row">
+						<div class="thumb">
+							<img src="@Html.DisplayFor(modelItem => test.NhaTuyenDungs.ImageDaiDien)" width="200px" height="120px" alt="Alternate Text" />
+							<ul class="tags">
+								<li>
+									@Html.DisplayFor(modelItem => test.TenNganh)
+								</li>
+								<li>
+									@Html.DisplayFor(modelItem => test.Tinhs.TenTinh)
+								</li>
+								<li>
+									@Html.DisplayFor(modelItem => test.ChucDanh)
+								</li>
+							</ul>
+						</div>
+						<div class="details">
+							<div class="title d-flex flex-row justify-content-between">
+								<div class="titles">
+									<a href="e:\hoctap\laptrinhweb\baikiemtra\hethan\doannhom2_ltweb-master\doannhom2_ltweb\views\phieudangtuyen\display.cshtml">
+										<h4>@Html.DisplayFor(modelItem => test.TenViecLam)</h4>
+									</a>
+									<h6>@Html.DisplayFor(modelItem => test.NhaTuyenDungs.TenNTD)</h6>
+								</div>
+								<ul class="btns">
+									<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+									<li><a class="" asp-action="Details" asp-route-id="@test.Id">Ứng tuyển</a></li>
+								</ul>
+							</div>
+							<p>
+								@* @Html.DisplayFor(modelItem => test.MoTa) *@
+							</p>
+							<p class="address"><span class="lnr lnr-map"></span> @Html.DisplayFor(modelItem => test.DiaDiem)</p>
+							<p class="address"><span class="lnr lnr-database"></span> @Html.DisplayFor(modelItem => test.MucLuong)</p>
+						</div>
+					</div>
+				}
+			</div>
+			@Html.Partial("~/Views/Shared/_SidebarPartial.cshtml")
+		</div>
+	</div>
+</section>

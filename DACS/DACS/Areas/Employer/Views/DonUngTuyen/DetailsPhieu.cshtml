@@ -1,0 +1,128 @@
+﻿@model IEnumerable<DACS.Models.DonUngTuyen>
+
+@{
+    ViewData["Title"] = "DetailsPhieu";
+    Layout = "~/Areas/Employer/Views/Shared/_Layout.cshtml";
+}
+<!-- Start banner Area -->
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row search-page-top d-flex align-items-center justify-content-center">
+            <div class="banner-content col-lg-12">
+                <h1 class="text-white">
+                    Tìm Kiếm Việc Làm
+                </h1>
+                <!--Search box-->
+                @* @Html.Partial("../Shared/_SearchBoxPartial.cshtml")
+                <p style="font-size: 20px" class="text-white"> <span>Search by tags:</span> Developer, Engineer, Technology, Support, Manager, Senior, Junior</p> *@
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container pt-3">
+    <h1 class="mb-3">CÁC ĐƠN ỨNG TUYỂN</h1>
+    <a asp-area="Employer" asp-controller="DonUngTuyen" asp-action="TrungTuyen" asp-route-id="@Model.FirstOrDefault()?.PhieuDangTuyenId" class="btn btn-success">Các đơn đã trúng tuyển</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Họ Tên
+                </th>
+                <th>
+                    CV
+                </th>
+                <th>
+                    Tên công việc
+                </th>
+                <th>
+                    Xét duyệt
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Users.FullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenCV)
+                        <br>
+                        @if (!string.IsNullOrEmpty(item.FileCV))
+                        {
+                            <a asp-action="ViewCV" asp-route-id="@item.Id" class="btn btn-success" target="_blank">Xem CV</a>
+                        }
+                        else
+                        {
+                            <span class="text-danger">Chưa có CV</span>
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhieuDangTuyens.TenViecLam)
+                    </td>
+                    <td>
+                        @if (item.XetDuyet == "Waiting")
+                        {
+                            <form asp-action="DetailsPhieu" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="id" value="@item.Id" />
+                                <button type="submit" name="decision" value="YES" class="btn btn-success">Chấp nhận</button>
+                                <button type="submit" name="decision" value="NO" class="btn btn-danger">Từ chối</button>
+                            </form>
+                        }
+                        @if (item.XetDuyet == "Yes")
+                        {
+                            <p>Đã trúng tuyển</p>
+                        }
+                        @if (item.XetDuyet == "No")
+                        {
+                            <p>Đã trượt</p>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<script>
+    function logId(event, id) {
+        event.preventDefault(); // Ngăn form submit để log trước
+        console.log("ID của form:", id);
+
+        // Sau khi log xong, bạn có thể tiếp tục submit form nếu cần
+        document.getElementById("applyForm").submit();
+    }
+</script>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#applyButton").click(function () {
+                $("#applyModal").modal('show');
+            });
+        });
+        $(document).ready(function () {
+            $("#applyButton2").click(function () {
+                $("#applyModal").modal('show');
+            });
+        });
+        function updateRequiredFields() {
+            const method = document.getElementById("Method").value;
+            const addressField = document.getElementById("address");
+            const linkField = document.getElementById("link");
+
+            if (method === "Online") {
+                linkField.required = true;  // Link bắt buộc khi chọn Online
+                addressField.required = false; // Địa chỉ không bắt buộc
+            } else if (method === "Offline") {
+                linkField.required = false; // Link không bắt buộc
+                addressField.required = true;  // Địa chỉ bắt buộc khi chọn Offline
+            }
+        }
+
+        // Đảm bảo thiết lập trạng thái đúng khi trang tải
+        document.addEventListener("DOMContentLoaded", updateRequiredFields);
+    </script>
+}

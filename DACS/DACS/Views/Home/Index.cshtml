@@ -1,0 +1,165 @@
+﻿@model IEnumerable<DACS.Models.PhieuDangTuyen>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<!-- Start banner Area -->
+<section class="banner-area relative" id="home">
+	<div class="overlay overlay-bg"></div>
+	<div class="container">
+		<div class="row search-page-top d-flex align-items-center justify-content-center">
+			<div class="banner-content col-lg-12">
+				<h1 class="text-white">
+					Tìm Kiếm Việc Làm
+				</h1>
+				<!--Search box-->
+				@* @Html.Partial("../Shared/_SearchBoxPartial.cshtml")
+				<p style="font-size: 20px" class="text-white"> <span>Search by tags:</span> Developer, Engineer, Technology, Support, Manager, Senior, Junior</p> *@
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End banner Area -->
+<!-- Start features Area -->
+<section class="features-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-6">
+				<div class="single-feature">
+					<h4>Tiện Lợi</h4>
+					<p>
+						Có một thực trạng hiện nay là dù chọn được trang web tuyển dụng miễn phí nhưng có đạt được hiệu quả như mong muốn không còn phụ thuộc vào nhiều yếu tố.
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="single-feature">
+					<h4>Nhanh Chóng</h4>
+					<p>
+						Tin tuyển dụng sau khi được đăng trên nền tảng của TopCV có tốc độ truyền tải nhanh, thu hút lượt xem và tương tác cao từ phía ứng viên. Từ đó nâng cao khả năng tìm thấy ứng viên thích hợp cho nhà tuyển dụng.
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="single-feature">
+					<h4>Uy Tín</h4>
+					<p>
+						Kể từ thời điểm xây dựng cho tới nay công ty đã có bước phát triển đáng kinh ngạc với năng lực lõi là công nghệ, đặc biệt là trí tuệ nhân tạo (AI).
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="single-feature">
+					<h4>Đa Dạng</h4>
+					<p>
+						Khi đăng ký tài khoản đăng tin tuyển dụng trên nền tảng, nhà tuyển dụng có cơ hội tiếp cận với rất nhiều hồ sơ ứng viên thuộc đủ các nhóm ngành, nghề, lĩnh vực.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- end features area -->
+<!-- Start popular-post Area -->
+<section class="popular-post-area pt-100">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="active-popular-post-carusel">
+				@foreach (var item in Model)
+				{
+					<div class="single-popular-post d-flex flex-row">
+						<div class="thumb">
+							<img class="img-fluid" src="@Html.DisplayFor(modelItem => item.NhaTuyenDungs.ImageDaiDien)" alt="">
+							<a class="btns text-uppercase" asp-controller="PhieuDangTuyen" asp-action="Details" asp-route-id="@item.Id">Chi tiết</a>
+						</div>
+						<div class="details">
+							@Html.DisplayFor(modelItem => item.TenViecLam)
+							<h6>@Html.DisplayFor(modelItem => item.NhaTuyenDungs.TenNTD)</h6>
+							<p>
+								@Html.DisplayFor(modelItem => item.NhaTuyenDungs.Email)
+							</p>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End popular-post Area -->
+<!-- Start feature-cat Area -->
+@* <section class="feature-cat-area pt-100" id="category">
+	<div class="container">
+		<div class="row d-flex justify-content-center">
+			<div class="menu-content pb-60 col-lg-10">
+				<div class="title text-center">
+					<h1 class="mb-10">Danh mục công việc nổi bật</h1>
+					<p>Những người cực kỳ yêu thích hệ thống thân thiện với môi trường.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			@foreach (var item in Model)
+			{
+				<div class="col-lg-2 col-md-4 col-sm-6">
+					<div class="single-fcat">
+						<img src="~/images/pic 1.png" alt="">
+						<p>@Html.DisplayFor(modelItem => item.TenNganh)</p>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+</section> *@
+<!-- End feature-cat Area -->
+@* <div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div> *@
+<!-- Start download Area -->
+<section class="download-area section-gap" id="app">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 download-left">
+				<img class="img-fluid" src="~/images/hình 2.jpg" alt="">
+			</div>
+			<div class="col-lg-6 download-right">
+				<h1>
+					Kiến tạo sự nghiệp của riêng bạn với website của chúng tôi
+				</h1>
+				<p class="subs">
+					Trải nghiệm tìm việc, ứng tuyển và hơn thế nữa - chỉ với website. Bắt đầu ngay hôm nay!
+				</p>
+				@* <div class="d-flex flex-row">
+					<div class="buttons">
+						<i class="fa fa-apple" aria-hidden="true"></i>
+						<div class="desc">
+							<a href="#">
+								<p>
+									<span>Available</span> <br>
+									on App Store
+								</p>
+							</a>
+						</div>
+					</div>
+					<div class="buttons">
+						<i class="fa fa-android" aria-hidden="true"></i>
+						<div class="desc">
+							<a href="#">
+								<p>
+									<span>Available</span> <br>
+									on Play Store
+								</p>
+							</a>
+						</div>
+					</div>
+				</div> *@
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End download Area -->
+<style>
+	.single-fcat img {
+		max-width: 50%; /* Đảm bảo ảnh không vượt quá chiều rộng của cha */
+		height: auto; /* Giữ tỷ lệ khung hình */
+	}
+</style>

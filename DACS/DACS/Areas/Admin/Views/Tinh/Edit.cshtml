@@ -1,0 +1,31 @@
+﻿@model DACS.Models.Tinh
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container mt-5">
+<h1>Chỉnh sửa thông tin tỉnh</h1>
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit" class="mb-3">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="TenTinh" class="control-label">Tên tỉnh</label>
+                <input asp-for="TenTinh" class="form-control" />
+                <span asp-validation-for="TenTinh" class="text-danger"></span>
+            </div>
+            <div class="form-group pt-3">
+                <button type="submit" class="btn btn-primary">Lưu</button>
+            </div>
+        </form>
+         <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+    </div>
+</div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

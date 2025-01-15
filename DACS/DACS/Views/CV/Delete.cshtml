@@ -1,0 +1,52 @@
+﻿@model DACS.Models.CV
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Start banner Area -->
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row search-page-top d-flex align-items-center justify-content-center">
+            <div class="banner-content col-lg-12">
+                <h1 class="text-white">
+                    Tìm Kiếm Việc Làm
+                </h1>
+                <!--Search box-->
+                @* @Html.Partial("../Shared/_SearchBoxPartial.cshtml")
+                <p style="font-size: 20px" class="text-white"> <span>Search by tags:</span> Developer, Engineer, Technology, Support, Manager, Senior, Junior</p> *@
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->
+<div class="container mt-5">
+    <h1>Xóa CV</h1>
+    <h3>Bạn có chắc chắn muốn xóa thông tin này không?</h3>
+    <div class="mb-5">
+        <h4>CV</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FileCV)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.FileCV)
+            </dd>
+            @* <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Users)
+            </dt>
+            <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Users.FullName)
+            </dd> *@
+        </dl>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Xóa" class="btn btn-danger" /> |
+            <a class="btn btn-secondary" asp-action="Index" asp-route-id="@Model.UserId">Quay lại danh sách</a>
+        </form>
+    </div>
+
+</div>

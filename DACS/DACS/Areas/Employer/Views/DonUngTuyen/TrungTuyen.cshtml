@@ -1,0 +1,178 @@
+﻿@model IEnumerable<DACS.Models.DonUngTuyen>
+
+@{
+    ViewData["Title"] = "TrungTuyen";
+    Layout = "~/Areas/Employer/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Start banner Area -->
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row search-page-top d-flex align-items-center justify-content-center">
+            <div class="banner-content col-lg-12">
+                <h1 class="text-white">
+                    Tìm Kiếm Việc Làm
+                </h1>
+                <!--Search box-->
+                @* @Html.Partial("../Shared/_SearchBoxPartial.cshtml")
+                <p style="font-size: 20px" class="text-white"> <span>Search by tags:</span> Developer, Engineer, Technology, Support, Manager, Senior, Junior</p> *@
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container pt-3">
+    <h1 class="mb-3">CÁC ĐƠN ỨNG TUYỂN</h1>
+    <form method="post" action="@Url.Action("HenNhieu", "DonUngTuyen")" enctype="multipart/form-data">
+        <!-- Button Hẹn gặp -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal">Hẹn gặp</button>
+
+        <!-- Modal Hẹn gặp -->
+        <div class="modal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="applyModalLabel">Hẹn gặp</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <input type="hidden" name="idPhieu" value="@Model.FirstOrDefault()?.PhieuDangTuyenId" />
+
+                        <div class="mb-3">
+                            <label for="Method" class="form-label">Cách thức</label>
+                            <select class="form-select" id="Method" name="Method" required onchange="updateRequiredFields()">
+                                <option value="Online">Online</option>
+                                <option value="Offline">Offline</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="date" class="form-label">Chọn ngày</label>
+                            <input type="date" class="form-control" id="date" name="date" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="startTime" class="form-label">Chọn giờ bắt đầu</label>
+                            <input type="time" class="form-control" id="startTime" name="startTime" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Địa Điểm</label>
+                            <input type="text" class="form-control" id="address" name="address">
+                        </div>
+                        <div class="mb-3">
+                            <label for="link" class="form-label">Link: </label>
+                            <input type="text" class="form-control" id="link" name="link">
+                        </div>
+                        <div class="mb-3">
+                            <label for="interval" class="form-label">Chọn thời gian giãn cách</label>
+                            <select class="form-select" id="interval" name="interval" required>
+                                <option value="5">5 phút</option>
+                                <option value="10">10 phút</option>
+                                <option value="15">15 phút</option>
+                                <option value="30">30 phút</option>
+                                <option value="60">60 phút</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Xác nhận</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Họ Tên
+                    </th>
+                    <th>
+                        CV
+                    </th>
+                    <th>
+                        Tên công việc
+                    </th>
+                    <th>
+                        Xét duyệt
+                    </th>
+                    <th>
+                        Hẹn phỏng vấn
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Users.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TenCV)
+                            <br>
+                            @if (!string.IsNullOrEmpty(item.FileCV))
+                            {
+                                <a asp-action="ViewCV" asp-route-id="@item.Id" class="btn btn-success" target="_blank">Xem CV</a>
+                            }
+                            else
+                            {
+                                <span class="text-danger">Chưa có CV</span>
+                            }
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PhieuDangTuyens.TenViecLam)
+                        </td>
+                        <td>
+                            <p>Đã trúng tuyển</p>
+                        </td>
+                        <td>
+                            @if (item.XetDuyet == "Yes")
+                            {
+                                <input type="checkbox" name="selectedItems" value="@item.Id" /> <!-- Checkbox để chọn ứng viên -->
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </form>
+</div>
+<script>
+    function logId(event, id) {
+        event.preventDefault(); // Ngăn form submit để log trước
+        console.log("ID của form:", id);
+
+        // Sau khi log xong, bạn có thể tiếp tục submit form nếu cần
+        document.getElementById("applyForm").submit();
+    }
+</script>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#applyButton").click(function () {
+                $("#applyModal").modal('show');
+            });
+        });
+        $(document).ready(function () {
+            $("#applyButton2").click(function () {
+                $("#applyModal").modal('show');
+            });
+        });
+        function updateRequiredFields() {
+            const method = document.getElementById("Method").value;
+            const addressField = document.getElementById("address");
+            const linkField = document.getElementById("link");
+
+            if (method === "Online") {
+                linkField.setAttribute("required", "true"); // Đặt thuộc tính required cho link
+                addressField.removeAttribute("required");   // Xóa thuộc tính required của address
+            } else if (method === "Offline") {
+                linkField.removeAttribute("required");     // Xóa thuộc tính required của link
+                addressField.setAttribute("required", "true"); // Đặt thuộc tính required cho address
+            }
+        }
+
+        // Đảm bảo thiết lập trạng thái đúng khi trang tải
+        document.addEventListener("DOMContentLoaded", updateRequiredFields);
+    </script>
+}

@@ -1,0 +1,205 @@
+﻿@model DACS.Models.PhieuDangTuyen
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Employer/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Start banner Area -->
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row search-page-top d-flex align-items-center justify-content-center">
+            <div class="banner-content col-lg-12">
+                <h1 class="text-white">
+                    Tìm Kiếm Việc Làm
+                </h1>
+                <!--Search box-->
+                @* @Html.Partial("../Shared/_SearchBoxPartial.cshtml")
+                <p style="font-size: 20px" class="text-white"> <span>Search by tags:</span> Developer, Engineer, Technology, Support, Manager, Senior, Junior</p> *@
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->
+
+<div class="pt-3 mb-4">
+    <div class="card" style="width:50%; margin:auto; font-size:17px">
+        <h1 class="card-header">Tạo</h1>
+        <h4 class="card-header">Phiếu Đăng Tuyển</h4>
+        <div class="col-md-10 pt-2" style="margin:auto">
+            <form asp-action="Create" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="TenNganh" class="control-label">Tên ngành</label>
+                    <select asp-for="TenNganh" class="form-control" id="tenNganhSelect">
+                        <option value="Công nghệ thông tin">Công nghệ thông tin</option>
+                        <option value="Kinh tế">Kinh tế</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Xây dựng">Xây dựng</option>
+                        <option value="Kỹ thuật">Kỹ thuật</option>
+                    </select>
+                    <span asp-validation-for="TenNganh" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NamKN" class="control-label">Năm kinh nghiệm</label>
+                    <select asp-for="NamKN" class="form-control">
+                        <option value="Thực tập sinh">Thực tập sinh</option>
+                        <option value="Không cần kinh nghiệm">Không cần kinh nghiệm</option>
+                        <option value="3-6 tháng">3-6 tháng</option>
+                        <option value="6 tháng - 1 năm">6 tháng - 1 năm</option>
+                        <option value="1-2 năm">1-2 năm</option>
+                        <option value="2-3 năm">2-3 năm</option>
+                        <option value="3-4 năm">3-4 năm</option>
+                        <option value="4-5 năm">4-5 năm</option>
+                        <option value="Trên 5 năm">Trên 5 năm</option>
+                    </select>
+                    <span asp-validation-for="NamKN" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TinhId" class="control-label">Tỉnh</label>
+                    <select asp-for="TinhId" class="form-control" asp-items="ViewBag.Tinh"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TenViecLam" class="control-label">Tên việc làm</label>
+                    <select asp-for="TenViecLam" class="form-control" id="tenViecLamSelect">
+                        <option value="Lập trình viên">Lập trình viên</option>
+                        <option value="Kỹ sư phần mềm">Kỹ sư phần mềm</option>
+                        <option value="Kỹ sư hệ thống">Kỹ sư hệ thống</option>
+                        <option value="Chuyên viên an ninh mạng">Chuyên viên an ninh mạng</option>
+                        <option value="Kỹ sư hệ thống">Kỹ sư hệ thống</option>
+                    </select>
+                    <span asp-validation-for="TenViecLam" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ChucDanh" class="control-label">Chức danh</label>
+                    <select asp-for="ChucDanh" class="form-control">
+                        <option value="Nhân viên">Nhân viên</option>
+                        <option value="Trưởng nhóm">Trưởng nhóm</option>
+                        <option value="Quản lý">Quản lý</option>
+                        <option value="Phó giám đốc">Phó giám đốc</option>
+                        <option value="Giám đốc">Giám đốc</option>
+                        <option value="Thực tập sinh">Thực tập sinh</option>
+                    </select>
+                    <span asp-validation-for="ChucDanh" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MucLuong" class="control-label">Mức lương</label>
+                    <select asp-for="MucLuong" class="form-control">
+                        <option value="0 - 3 Triệu/Tháng">0 - 3 Triệu/Tháng</option>
+                        <option value="3 - 5 Triệu/Tháng">3 - 5 Triệu/Tháng</option>
+                        <option value="5 - 8 Triệu/Tháng">5 - 8 Triệu/Tháng</option>
+                        <option value="8 - 10 Triệu/Tháng">8 - 10 Triệu/Tháng</option>
+                        <option value="10 - 12 Triệu/Tháng">10 - 12 Triệu/Tháng</option>
+                        <option value="12 - 15 Triệu/Tháng">12 - 15 Triệu/Tháng</option>
+                        <option value="15 - 18 Triệu/Tháng">15 - 18 Triệu/Tháng</option>
+                        <option value="18 - 20 Triệu/Tháng">18 - 20 Triệu/Tháng</option>
+                        <option value="20 - 25 Triệu/Tháng">20 - 25 Triệu/Tháng</option>
+                        <option value="25 - 30 Triệu/Tháng">25 - 30 Triệu/Tháng</option>
+                        <option value="30 - 40 Triệu/Tháng">30 - 40 Triệu/Tháng</option>
+                        <option value="40 - 50 Triệu/Tháng">40 - 50 Triệu/Tháng</option>
+                        <option value="50 - 100 Triệu/Tháng">50 - 100 Triệu/Tháng</option>
+                    </select>
+                    <span asp-validation-for="MucLuong" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MoTa" class="control-label">Mô tả</label>
+                    <input asp-for="MoTa" class="form-control" />
+                    <span asp-validation-for="MoTa" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DiaDiem" class="control-label">Địa điểm</label>
+                    <input asp-for="DiaDiem" class="form-control" />
+                    <span asp-validation-for="DiaDiem" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NgayLapPhieu" class="control-label">Ngày bắt đầu</label>
+                    <input asp-for="NgayLapPhieu" class="form-control" />
+                    <span asp-validation-for="NgayLapPhieu" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="HanNopHoSo" class="control-label">Ngày kết thúc</label>
+                    <input asp-for="HanNopHoSo" class="form-control" />
+                    <span asp-validation-for="HanNopHoSo" class="text-danger"></span>
+                </div>
+                <div class="form-group flex justify-content-between" >
+                    <input type="submit" value="Tạo" class="btn btn-primary" />
+                    <button class="btn btn-close" asp-action="Index">Quay lại danh sách</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tenNganhSelect = document.getElementById('tenNganhSelect');
+            const tenViecLamSelect = document.getElementById('tenViecLamSelect');
+
+            const jobOptions = {
+                'Công nghệ thông tin': [
+                    { value: 'Lập trình viên', text: 'Lập trình viên' },
+                    { value: 'Kỹ sư phần mềm', text: 'Kỹ sư phần mềm' },
+                    { value: 'Quản lý dự án IT', text: 'Quản lý dự án IT' },
+                    { value: 'Chuyên viên an ninh mạng', text: 'Chuyên viên an ninh mạng' },
+                    { value: 'Kỹ sư hệ thống', text: 'Kỹ sư hệ thống' }
+                ],
+                'Kinh tế': [
+                    { value: 'Nhân viên kinh doanh', text: 'Nhân viên kinh doanh' },
+                    { value: 'Quản lý tài chính', text: 'Quản lý tài chính' },
+                    { value: 'Chuyên viên tài chính', text: 'Chuyên viên tài chính' },
+                    { value: 'Chuyên viên đầu tư', text: 'Chuyên viên đầu tư' },
+                    { value: 'Kế toán trưởng', text: 'Kế toán trưởng' }
+                ],
+                'Marketing': [
+                    { value: 'Chuyên viên marketing', text: 'Chuyên viên marketing' },
+                    { value: 'Trưởng phòng marketing', text: 'Trưởng phòng marketing' },
+                    { value: 'Quản lý truyền thông', text: 'Quản lý truyền thông' },
+                    { value: 'Người sáng tạo nội dung', text: 'Người sáng tạo nội dung' },
+                    { value: 'Chuyên viên SEO', text: 'Chuyên viên SEO' }
+                ],
+                'Xây dựng': [
+                    { value: 'Kỹ sư xây dựng', text: 'Kỹ sư xây dựng' },
+                    { value: 'Giám sát công trình', text: 'Giám sát công trình' },
+                    { value: 'Trưởng phòng thiết kế', text: 'Trưởng phòng thiết kế' },
+                    { value: 'Chuyên viên quản lý dự án', text: 'Chuyên viên quản lý dự án' },
+                    { value: 'Kỹ sư kết cấu', text: 'Kỹ sư kết cấu' }
+                ],
+                'Kỹ thuật': [
+                    { value: 'Kỹ sư cơ khí', text: 'Kỹ sư cơ khí' },
+                    { value: 'Kỹ sư điện tử', text: 'Kỹ sư điện tử' },
+                    { value: 'Quản lý sản xuất', text: 'Quản lý sản xuất' },
+                    { value: 'Kỹ sư tự động hóa', text: 'Kỹ sư tự động hóa' },
+                    { value: 'Kỹ thuật viên sửa chữa', text: 'Kỹ thuật viên sửa chữa' }
+                ]
+            };
+
+            tenNganhSelect.addEventListener('change', function () {
+                const selectedNganh = this.value;
+                tenViecLamSelect.innerHTML = ''; // Xóa các option cũ
+
+                if (selectedNganh && jobOptions[selectedNganh]) {
+                    tenViecLamSelect.disabled = false;
+                    jobOptions[selectedNganh].forEach(option => {
+                        const opt = document.createElement('option');
+                        opt.value = option.value;
+                        opt.textContent = option.text;
+                        tenViecLamSelect.appendChild(opt);
+                    });
+                } else {
+                    tenViecLamSelect.disabled = true;
+                    const opt = document.createElement('option');
+                    opt.textContent = 'Chọn ngành trước';
+                    tenViecLamSelect.appendChild(opt);
+                }
+            });
+        });
+    </script>
+}

@@ -1,0 +1,110 @@
+﻿@model IEnumerable<DACS.Models.Meet>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Employer/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Start banner Area -->
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row search-page-top d-flex align-items-center justify-content-center">
+            <div class="banner-content col-lg-12">
+                <h1 class="text-white">
+                    Tìm Kiếm Việc Làm
+                </h1>
+                <!--Search box-->
+                @* @Html.Partial("../Shared/_SearchBoxPartial.cshtml")
+                <p style="font-size: 20px" class="text-white"> <span>Search by tags:</span> Developer, Engineer, Technology, Support, Manager, Senior, Junior</p> *@
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<table class="table table-striped mb-5" style="width:85%; margin:auto; color:black">
+    <thead>
+        <tr style="font-family:Arial; font-size: 18px ">
+            <th>
+                Cách thức
+            </th>
+            <th>
+                Ngày
+            </th>
+            <th>
+                Giờ
+            </th>
+            <th>
+                Địa điểm
+            </th>
+            <th>
+                Link gặp Online
+            </th>
+            <th>
+                Yêu cầu
+            </th>
+            <th>
+                Người trúng tuyển
+            </th>
+            <th>
+                Nhà tuyển dụng
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+            <tr style="font-size: 17px">
+            <td>
+                @Html.DisplayFor(modelItem => item.Method)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Link)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YeuCau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Users.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NhaTuyenDungs.TenNTD)
+            </td>
+            @* <td>
+                <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.Id">Sửa</a> 
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Xóa</a>
+            </td> *@
+        </tr>
+    }
+    </tbody>
+</table>
+
+<style>
+    /* From Uiverse.io by ke1221 */
+    button-cus {
+        color: #090909;
+        padding: 0.7em 1.7em;
+        font-size: 18px;
+        border-radius: 0.5em;
+        background: #e8e8e8;
+        cursor: pointer;
+        border: 1px solid #e8e8e8;
+        transition: all 0.3s;
+        box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+    }
+
+        button-cus:active {
+            color: #666;
+            box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+        }
+</style>

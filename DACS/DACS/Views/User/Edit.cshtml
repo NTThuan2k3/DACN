@@ -1,0 +1,84 @@
+﻿@model DACS.Models.User
+@{
+    ViewData["Title"] = "Chỉnh sửa thông tin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Start banner Area -->
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row search-page-top d-flex align-items-center justify-content-center">
+            <div class="banner-content col-lg-12">
+                <h1 class="text-white">
+                    Tìm Kiếm Việc Làm
+                </h1>
+                <!--Search box-->
+                @* @Html.Partial("../Shared/_SearchBoxPartial.cshtml")
+                <p style="font-size: 20px" class="text-white"> <span>Search by tags:</span> Developer, Engineer, Technology, Support, Manager, Senior, Junior</p> *@
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->
+
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">Chỉnh sửa người dùng</h2>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="Id" />
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label asp-for="FullName" class="font-weight-bold">Họ tên:</label>
+                        <input asp-for="FullName" class="form-control" placeholder="Nhập họ tên" />
+                        <span asp-validation-for="FullName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="PhoneNumber" class="font-weight-bold">Số điện thoại:</label>
+                        <input asp-for="PhoneNumber" class="form-control" placeholder="Nhập số điện thoại" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CCCD" class="font-weight-bold">CCCD:</label>
+                    <input asp-for="CCCD" class="form-control" placeholder="Nhập CCCD" />
+                    <span asp-validation-for="CCCD" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Image" class="font-weight-bold">Ảnh đại diện:</label>
+                    <input type="file" asp-for="Image" name="image" class="form-control" id="imageInput" />
+                </div>
+                <div class="form-group text-center">
+                    <img src="@(!string.IsNullOrEmpty(Model.Image) ? Model.Image : "/path/to/default/image.jpg")"
+                         alt="Ảnh đại diện"
+                         class="rounded img-thumbnail shadow"
+                         style="max-width: 150px;"
+                         id="previewImage" />
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success px-5">Lưu chỉnh sửa</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('imageInput').addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = document.getElementById("previewImage");
+                img.src = e.target.result; // Cập nhật ảnh xem trước bằng ảnh mới
+            };
+            reader.readAsDataURL(file);
+        } else {
+            const img = document.getElementById("previewImage");
+            img.src = "@Model.Image";
+        }
+    });
+</script>

@@ -1,0 +1,46 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<h4 class="mb-2">Chào mừng đến trang website của chúng tôi! 👋</h4>
+<p class="mb-4">Vui lòng đăng nhập vào tài khoản của bạn</p>
+
+<form id="account" method="post">
+    @*  <h2>Use a local account to log in.</h2> *@
+    <hr />
+    <div asp-validation-summary="ModelOnly" class="mb-3" role="alert"></div>
+    <div class="form-floating mb-3">
+        <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+        <label asp-for="Input.Email" class="">Email</label>
+        <span asp-validation-for="Input.Email" class="text-danger"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Mật Khẩu" />
+        <label asp-for="Input.Password" class="">Mật Khẩu</label>
+        <span asp-validation-for="Input.Password" class="text-danger"></span>
+    </div>
+    <div class="checkbox mb-3">
+        <label asp-for="Input.RememberMe" class="form-label">
+            <input class="form-check-input" asp-for="Input.RememberMe" />
+            Ghi nhớ tài khoản?
+        </label>
+    </div>
+    <div>
+        <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary mb-3">Đăng Nhập</button>
+    </div>
+</form>
+<p class="text-center">
+    <span>Chưa có tài khoản?</span>
+    <a class="mb-3" id="register" asp-area="Identity" asp-page="/Account/Register">
+        <span>Hãy đăng ký ngay</span>
+    </a>
+</p>
+<p class="text-center">
+    <a id="forgot-password" asp-page="./ForgotPassword">Quên mật khẩu?</a>
+</p>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

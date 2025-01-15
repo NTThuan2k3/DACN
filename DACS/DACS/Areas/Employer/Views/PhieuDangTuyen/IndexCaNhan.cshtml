@@ -1,0 +1,185 @@
+﻿@model IEnumerable<DACS.Models.PhieuDangTuyen>
+
+@{
+    ViewData["Title"] = "IndexCaNhan";
+    Layout = "~/Areas/Employer/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Start banner Area -->
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row search-page-top d-flex align-items-center justify-content-center">
+            <div class="banner-content col-lg-12">
+                <h1 class="text-white">
+                    Tìm Kiếm Việc Làm
+                </h1>
+                <!--Search box-->
+                @* @Html.Partial("../Shared/_SearchBoxPartial.cshtml")
+                <p style="font-size: 20px" class="text-white"> <span>Search by tags:</span> Developer, Engineer, Technology, Support, Manager, Senior, Junior</p> *@
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->
+<!-- Bordered Table -->
+<div class="pt-3 mb-4">
+    <div class="card mb-4" style="width:88%; margin:auto">
+        <h1 class="card-header text-center">Danh sách các phiếu tuyển dụng</h1>
+        <div class="card-body">
+            <div class="table-responsive text-nowrap">
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>
+                                @* @Html.DisplayNameFor(model => model.TenNganh) *@
+                                Tên Ngành
+                            </th>
+                            <th>
+                                @* @Html.DisplayNameFor(model => model.MucLuong) *@
+                                Mức Lương
+                            </th>
+                            <th>
+                                @* @Html.DisplayNameFor(model => model.NamKN) *@
+                                Năm Kinh Nghiệm
+                            </th>
+                            <th>
+                                @* @Html.DisplayNameFor(model => model.Tinhs) *@
+                                Tỉnh Thành
+                            </th>
+                            <th>
+                                @* @Html.DisplayNameFor(model => model.TenViecLam) *@
+                                Tên Việc Làm
+                            </th>
+                            <th>
+                                @* @Html.DisplayNameFor(model => model.ChucDanh) *@
+                                Chức Danh
+                            </th>
+                            <th>
+                                @* @Html.DisplayNameFor(model => model.NgayLapPhieu) *@
+                                Ngày Lập Phiếu
+                            </th>
+                            @* <th>
+                            @* @Html.DisplayNameFor(model => model.HanNopHoSo)
+                            Hạn Phiếu
+                            </th> *@
+                        </tr>
+                    </thead>
+                    @foreach (var item in Model)
+                    {
+                        <tr style="font-size: 17px; font-family:Arial">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TenNganh)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MucLuong)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NamKN)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Tinhs.TenTinh)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TenViecLam)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ChucDanh)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NgayLapPhieu)
+                            </td>
+                            @* <td>
+                        @Html.DisplayFor(modelItem => item.HanNopHoSo)
+                        </td> *@
+                            @* <td>
+                        <a class="buttonConfirm" asp-controller="DonUngTuyen" asp-action="DetailsPhieu" asp-route-id="@item.Id">Các Đơn Đã Nhận</a>
+                        <a class="buttonDelete" asp-controller="DonUngTuyen" asp-action="Delete" asp-route-id="@item.Id">Xóa phiếu</a>
+                        </td> *@
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button"
+                                            data-bs-toggle="dropdown"
+                                            class="setting-btn">
+                                        <span class="bar bar1"></span>
+                                        <span class="bar bar2"></span>
+                                        <span class="bar bar1"></span>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" asp-controller="DonUngTuyen" asp-action="DetailsPhieu" asp-route-id="@item.Id">
+                                            <i class="bx bx-edit-alt me-1"></i> Các Đơn Đã Nhận
+                                        </a>
+                                        <a class="dropdown-item" asp-controller="PhieuDangTuyen" asp-action="DetailsPhieu" asp-route-id="@item.Id">
+                                            <i class="bx bx-edit-alt me-1"></i> Chi tiết
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--/ Bordered Table -->
+
+<style>
+
+    /* From Uiverse.io by vinodjangid07 */
+    .setting-btn {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        background-color: rgb(63,94,251);
+        border-radius: 10px;
+        cursor: pointer;
+        border: none;
+        box-shadow: 0px 0px 0px 2px rgb(212, 209, 255);
+    }
+
+    .bar {
+        width: 50%;
+        height: 2px;
+        background-color: rgb(229, 229, 229);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        border-radius: 2px;
+    }
+
+        .bar::before {
+            content: "";
+            width: 2px;
+            height: 2px;
+            background-color: rgb(63,94,251);
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid white;
+            transition: all 0.3s;
+            box-shadow: 0px 0px 5px white;
+        }
+
+    .bar1::before {
+        transform: translateX(-4px);
+    }
+
+    .bar2::before {
+        transform: translateX(4px);
+    }
+
+    .setting-btn:hover .bar1::before {
+        transform: translateX(4px);
+    }
+
+    .setting-btn:hover .bar2::before {
+        transform: translateX(-4px);
+    }
+
+</style>

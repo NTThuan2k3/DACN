@@ -1,0 +1,145 @@
+﻿@model IEnumerable<DACS.Models.NhaTuyenDung>
+
+@{
+    ViewData["Title"] = "XetDuyet";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@* <p>
+    <a asp-action="Create">Create New</a>
+</p> *@
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="card mb-5">
+        <h1 class ="card-header">Xét Duyệt</h1>
+        <div class="table-responsive text-nowrap">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Tên nhà tuyển dụng
+                        </th>
+                        <th>
+                            Số điện thoại
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Chức vụ
+                        </th>
+                        <th>
+                            Tên công ty
+                        </th>
+                        <th>
+                            Giấy phép kinh doanh
+                        </th>
+                        <th>
+                            Mã số thuế
+                        </th>
+                        @* <th>
+                        Tỉnh
+                        </th>
+                        <th>
+                        Địa điểm
+                        </th>
+                        <th>
+                        Website
+                        </th>
+                        <th>
+                        Quy mô
+                        </th> *@
+                        <th>
+                            Hình ảnh công ty
+                        </th>
+                        <th>
+                            Thông tin công ty
+                        </th>
+                        <th>
+                            Ảnh đại điện
+                        </th>
+                        @* <th>
+                        Lời nhắn
+                        </th> *@
+                        <th>
+                            Trạng thái
+                        </th>
+                        <th>
+                            Xét duyệt
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TenNTD)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SDT)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ChucVu)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TenCty)
+                            </td>
+                            <td>
+                                <img src="@Html.DisplayFor(modelItem => item.GiayPhepKinhDoanh)" alt="Alternate Text" style="max-width: 100px; max-height: 100px;" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MaSoThue)
+                            </td>
+                            @* <td>
+                        @Html.DisplayFor(modelItem => item.Tinhs.TenTinh)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.DiaDiem)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.Website)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.QuyMo)
+                        </td> *@
+                            <td>
+                                <img src="@Html.DisplayFor(modelItem => item.HinhAnhCty)" alt="Alternate Text" style="max-width: 50px; max-height: 50px;" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ThongTinCty)
+                            </td>
+                            <td>
+                                <img src="@Html.DisplayFor(modelItem => item.ImageDaiDien)" alt="Alternate Text" style="max-width: 50px; max-height: 50px;" />
+                            </td>
+                            @* <td>
+                        @Html.DisplayFor(modelItem => item.TinNhanThem)
+                        </td> *@
+                            <td>
+                                @if (item.XetDuyet == "Waiting")
+                                {
+                                    <p>Chờ xét duyệt</p>
+                                }
+                                else
+                                {
+                                    <p>Đã xét duyệt</p>
+                                }
+                            </td>
+                            <td>
+                                <form asp-action="XetDuyet" method="post" enctype="multipart/form-data">
+                                    <input type="hidden" name="id" value="@item.Id" />
+                                    <button type="submit" name="decision" value="YES" class="btn btn-success">Chấp nhận</button>
+                                    <button type="submit" name="decision" value="NO" class="btn btn-danger">Từ chối</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

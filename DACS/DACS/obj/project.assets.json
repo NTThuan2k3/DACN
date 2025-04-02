@@ -11793,11 +11793,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\DACS.csproj",
+      "projectUniqueName": "C:\\Users\\THUAN\\Documents\\FileHSD\\DACN\\DACS\\DACS\\DACS.csproj",
       "projectName": "DACS",
-      "projectPath": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\DACS.csproj",
+      "projectPath": "C:\\Users\\THUAN\\Documents\\FileHSD\\DACN\\DACS\\DACS\\DACS.csproj",
       "packagesPath": "C:\\Users\\THUAN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\obj\\",
+      "outputPath": "C:\\Users\\THUAN\\Documents\\FileHSD\\DACN\\DACS\\DACS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\THUAN\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5u3QSlV7NhtS9ocGgL5qOtCLyEalzOscW7VEGoLAJiDyvrB2F/rdYgMBflYj3pKVRR5L0phc47q8mzlw4M6jPg==",
+  "dgSpecHash": "OtONcWASYPRifnjoX0OHKoevJjRA1fwE92lA+kZSZLHT4grlVzA7oQyAs+xdmvf2H4U0/duuUhfICQw+3L8/IA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\DACS.csproj",
+  "projectFilePath": "C:\\Users\\THUAN\\Documents\\FileHSD\\DACN\\DACS\\DACS\\DACS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\THUAN\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\THUAN\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

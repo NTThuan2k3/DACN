@@ -8,8 +8,8 @@ namespace DACS.Services
     {
         public Task SendEmailAsync(string email, string subject, string message)
         {
-            var mail = "mail@gmail.com";
-            var pw = "key";
+            var mail = "nguyenthuan3399@gmail.com";
+            var pw = "kjwz utwl dgzm ihso";
 
             var client = new SmtpClient("smtp.gmail.com")
             {

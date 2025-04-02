@@ -5104,6 +5104,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CVs\0f5d7c80-a2af-49ba-be26-3861fd172df0\Nguyễn Văn IGH.pdf))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CVs\0f5d7c80-a2af-49ba-be26-3861fd172df0\TranThiB.pdf))">
+      <SourceType>Package</SourceType>
+      <SourceId>DACS</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DACS</BasePath>
+      <RelativePath>CVs/0f5d7c80-a2af-49ba-be26-3861fd172df0/TranThiB.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CVs\0f5d7c80-a2af-49ba-be26-3861fd172df0\TranThiB.pdf))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\CVs\1568305d-c69f-465a-a836-47680069b1d3\LuuVanK.pdf))">
       <SourceType>Package</SourceType>
       <SourceId>DACS</SourceId>

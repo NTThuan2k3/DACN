@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "E528FXixQ9JPTgBbfiKeG/AJeGLlIyJj6P1H/wAJTIg=",
+  "Hash": "I95wgDYxFjn8ghq4EjrQVAOGFYukGRzjgmyMf4qkrVA=",
   "Source": "DACS",
   "BasePath": "_content/DACS",
   "Mode": "Default",
@@ -7254,6 +7254,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\CVs\\0f5d7c80-a2af-49ba-be26-3861fd172df0\\NguyenVanC.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\wwwroot\\CVs\\0f5d7c80-a2af-49ba-be26-3861fd172df0\\TranThiB.pdf",
+      "SourceId": "DACS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\wwwroot\\",
+      "BasePath": "_content/DACS",
+      "RelativePath": "CVs/0f5d7c80-a2af-49ba-be26-3861fd172df0/TranThiB.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\CVs\\0f5d7c80-a2af-49ba-be26-3861fd172df0\\TranThiB.pdf"
     },
     {
       "Identity": "C:\\Users\\THUAN\\Documents\\File HSD\\DACN\\DACS\\DACS\\wwwroot\\CVs\\1568305d-c69f-465a-a836-47680069b1d3\\LuuVanK.pdf",

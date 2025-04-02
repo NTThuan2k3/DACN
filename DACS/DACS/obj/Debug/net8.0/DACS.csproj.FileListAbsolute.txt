@@ -4354,3 +4354,4 @@ C:\Users\THUAN\Documents\File HSD\DACN\DACS\DACS\obj\Debug\net8.0\scopedcss\proj
 C:\Users\THUAN\Documents\File HSD\DACN\DACS\DACS\obj\Debug\net8.0\DACS.csproj.Up2Date
 C:\Users\THUAN\Documents\File HSD\DACN\DACS\DACS\obj\Debug\net8.0\DACS.genruntimeconfig.cache
 C:\Users\THUAN\Documents\File HSD\DACN\DACS\DACS\obj\Debug\net8.0\ref\DACS.dll
+C:\Users\THUAN\Documents\File HSD\DACN\DACS\DACS\obj\Debug\net8.0\DACS.sourcelink.json

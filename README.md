@@ -52,8 +52,12 @@
 ### 3. Cấu hình cơ sở dữ liệu / Configure Database
 
 - Mở file appsettings.json, sửa lại chuỗi kết nối:
+
     "ConnectionStrings": {
         "DefaultConnection": "Server=YOUR_SERVER_NAME;Database=DATABASE_NAME;Trusted_Connection=True;"
     }
-- Vào Visual Studio chọn **Tools -> NuGet Package Manager -> Package Manager Console** sau đó gõ lệnh
+
+- Vào Visual Studio chọn **Tools -> NuGet Package Manager -> Package Manager Console** sau đó gõ lệnh:
+
     update-database
+    
